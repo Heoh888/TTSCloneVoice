@@ -1,0 +1,79 @@
+# Configuration for Cog ⚙️
+# Reference: https://cog.run/yaml
+
+build:
+  # set to true if your model requires a GPU
+  gpu: false
+
+  # a list of ubuntu apt packages to install
+  # system_packages:
+  #   - "libgl1-mesa-glx"
+  #   - "libglib2.0-0"
+
+  # python version in the form '3.11' or '3.11.4'
+  python_version: "3.11"
+
+  # a list of packages in the format <package-name>==<version>
+  python_packages:
+    - "numpy"
+    - "cython"
+    - "scipy"
+    - "torch"
+    - "torchaudio"
+    - "soundfile"
+    - "librosa"
+    - "scikit-learn"
+    - "numba"
+    - "inflect"
+    - "tqdm"
+    - "anyascii"
+    - "pyyaml"
+    - "fsspec"
+    - "aiohttp"
+    - "packaging"
+    - "mutagen"
+    # deps for inference
+    - "pysbd"
+    # deps for notebooks
+    - "umap-learn"
+    - "pandas"
+    # deps for training
+    - "matplotlib"
+    # coqui stack
+    - "trainer"
+    # config management
+    - "coqpit"
+    # chinese g2p deps
+    - "jieba"
+    - "pypinyin"
+    # korean
+    - "hangul_romanize"
+    # gruut+supported langs
+    - "gruut[de,es,fr]"
+    # deps for korean
+    - "jamo"
+    - "nltk"
+    - "g2pkk"
+    # deps for bangla
+    - "bangla"
+    - "bnnumerizer"
+    - "bnunicodenormalizer"
+    #deps for tortoise
+    - "einops"
+    - "transformers"
+    #deps for bark
+    - "encodec"
+    # deps for XTTS
+    - "unidecode"
+    - "num2words"
+    - "spacy[ja]"
+
+
+
+  # commands run after the environment is setup
+  # run:
+  #   - "echo env is ready!"
+  #   - "echo another command if needed"
+
+# predict.py defines how predictions are run on your model
+predict: "predict.py:Predictor"
